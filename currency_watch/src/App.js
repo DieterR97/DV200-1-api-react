@@ -6,6 +6,7 @@ import NavbarMain from './components/navbar';
 import Landing from './Pages/landing';
 import Compare from './Pages/compare';
 import Timeline from './Pages/timeline';
+import VideoTesting from './Pages/videoTesting';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Landing />} ></Route>
         <Route path='/compare' element={<Compare />} ></Route>
         <Route path='/timeline' element={<Timeline />} ></Route>
+        <Route path='/videoTesting' element={<VideoTesting />} ></Route>
       </Routes>
     </div>
   );

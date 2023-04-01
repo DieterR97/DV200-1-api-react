@@ -13,6 +13,7 @@ function NavbarMain() {
                     <Nav.Link href="/" style={{ color: '#0dcaf0' }}>Home</Nav.Link>
                     <Nav.Link href="/compare" style={{ color: '#0dcaf0' }}>Compare Currencies</Nav.Link>
                     <Nav.Link href="/timeline" style={{ color: '#0dcaf0' }}>Timeline</Nav.Link>
+                    <Nav.Link href="/videoTesting" style={{ color: '#0dcaf0' }}>videoTesting</Nav.Link>
 
                 </Nav>
                 <form className="form-inline">
