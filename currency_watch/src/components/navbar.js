@@ -3,17 +3,18 @@ import { Container } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 import '../App.css'
+import logoEye from "../logoEye.svg"
 
 function NavbarMain() {
     return (
         <Navbar bg='dark' variant="dark">
             <Container>
-                <Navbar.Brand href="/">Currency Watch</Navbar.Brand>
+                <Navbar.Brand href="/"><img src={logoEye} width={80} style={{ marginRight: 20}}/> Currency Watch</Navbar.Brand>
                 <Nav className=".justify-content-center">
                     <Nav.Link href="/" style={{ color: '#0dcaf0' }}>Home</Nav.Link>
                     <Nav.Link href="/compare" style={{ color: '#0dcaf0' }}>Compare Currencies</Nav.Link>
                     <Nav.Link href="/timeline" style={{ color: '#0dcaf0' }}>Timeline</Nav.Link>
-                    <Nav.Link href="/videoTesting" style={{ color: '#0dcaf0' }}>videoTesting</Nav.Link>
+                    <Nav.Link href="/convert" style={{ color: '#0dcaf0' }}>Convert Currencies</Nav.Link>
 
                 </Nav>
                 <form className="form-inline">
