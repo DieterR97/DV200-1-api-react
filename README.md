@@ -67,14 +67,24 @@ This web application has:
 ## Concept Process
 * ### Wireframes
 
-
+![low-fidelity-wireframes](https://user-images.githubusercontent.com/113913471/231190860-898e800f-7619-4001-b204-d4fb5eb25285.jpg)
 
 ## Development Process
 * ### Implementation Process
     * Highlights
+      * React is very fast in updating the dom as it's Object Oriented
+      * Breaking up your web application into components is a very clean and re-useable way of coding
+      * Axios is a usefull way of making your API calls and delivers promises which is great when it comes to using the data in the response
+      * Routing is a clean and easy way of using your different pages and components, like the navbar, less code is used in the end
+      * Charts.js is an awesome and super usefull way of displaying data
     * Challenges
+      * Learning what Asynchronous programming is and AsyncAwait was a bit of a challenge getting my head around that
+      * Learning the url structure of my specific API and how to pass parameters to it
+      * Styling the Charts.js components
 
 ## Future Implementation
+
+In the future I will most probably use a more user friendly API that supports more endpoints for free than that which my current API does. I will also implement more functionality into my web application such as choosing the dates from which you want to see the exchange rate for a certain currency, also choosing the time frames in which you want to see the exchange rates for.
 
 ## Final Outcome
 * ### Mockups
@@ -82,3 +92,8 @@ This web application has:
 
 ## Conclusion
 
+I have enjoyed problem solving and developing the web application from the ground up. This was a challenging project but I overcame most of the challenges I faced and I’m extremely proud of and pleased with the final outcome of my Currency exchange visualisation web application. Working with my API was a challenge but also interesting and I learned quite a bit from it.
+
+Learning React was awesome along with the very usefull implementation of axios, routing and component based approach. I love using components and Routing espescially.
+
+Using the data visualisation framework Chart.js was as well a new learning experience which was fun and pleasing to work with.
