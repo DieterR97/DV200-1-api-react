@@ -22,6 +22,7 @@ I ended up going with an API provided by *CurrencyBeacon* which provides real-ti
    * Bootstrap
    * Axios
    * React-Router-Dom
+   * [CurrencyBeacon API](https://currencybeacon.com/api-documentation)
 
 ## Getting Started
 * ### Prerequisites
