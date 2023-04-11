@@ -97,3 +97,5 @@ I have enjoyed problem solving and developing the web application from the groun
 Learning React was awesome along with the very usefull implementation of axios, routing and component based approach. I love using components and Routing espescially.
 
 Using the data visualisation framework Chart.js was as well a new learning experience which was fun and pleasing to work with.
+
+I will deffinitely be using the technologies learned from throughout the term in future web applications.
