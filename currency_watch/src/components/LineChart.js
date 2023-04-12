@@ -24,11 +24,11 @@ ChartJS.register(
     Legend
 );
 
-// ChartData is props / parameters
+// ChartData and ChartOptions is props / parameters
 function LineChart({ ChartOptions, ChartData }) {
     return (
-        // return specific chart with ChartData as chart data
-        <Line options={ChartOptions} data={ChartData} />
+        // return specific chart with ChartData as chart data and ChartOptions as options
+        <Line options={ChartOptions} data={ChartData} redraw={true} />
     )
 }
 

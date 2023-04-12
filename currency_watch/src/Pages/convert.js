@@ -1,22 +1,31 @@
 import React from "react";
+// import array of currency codes
 import { CurrencyCodes } from "../currency_codes";
+// import axios to use in API Call
 import axios from 'axios';
+// import useState and useEffect
 import { useState, useEffect } from "react";
+// import mockup for page
 import CompareScreenshot from '../MacBook Air_CompareScreenshot.png'
 
 function Convert() {
 
+    // endpoint to be used in API call
     const endpointConvert = 'convert';
 
-    const api_key = '3adcdbb1074c952217f648676ec9305f';
+    // API Key
+    const api_key = 'b519f8f005e1e5b8db27f39b6aa3474c';
 
     const [currencyFrom, setCurrencyFrom] = useState([]);
     const [currencyTo, setCurrencyTo] = useState([]);
     const [amount, setAmount] = useState([]);
     const [converted, setConverted] = useState([]);
 
+    // on amount change run this function
     const handleChange = (event) => {
+        // set amount to value of number input
         setAmount(event.target.value);
+        // set converted to null so that dom which displays result updates
         setConverted('');
     };
 
@@ -28,6 +37,7 @@ function Convert() {
                 console.log(response);
                 console.log(response.data.response.value);
 
+                // set converted amount and fix it to 2 decimal places
                 setConverted(response.data.response.value.toFixed(2));
 
             })
@@ -84,18 +94,21 @@ function Convert() {
             </div>
 
             <div>
-                <label for="amount">Currency Amount</label>
-                <input id="amount" name="amount" type="number" placeholder="0" onChange={handleChange} value={amount} required autocomplete="off" style={{ margin: '10px'}} />
+                <label htmlFor="amount">Currency Amount</label>
+                <input id="amount" name="amount" type="number" placeholder="0" onChange={handleChange} value={amount} required autoComplete="off" style={{ margin: '10px' }} />
                 <button onClick={convertAmount} >CONVERT</button>
             </div>
 
+            {/* only display result if converted is not null */}
             {converted !== '' && <h1 style={{ color: 'black' }}>{currencyTo} {converted}</h1>}
 
-            <img src={CompareScreenshot} style={{ width: '50%'}}/>
+            {/* mockup for page */}
+            <img src={CompareScreenshot} style={{ width: '50%' }} />
 
 
         </div>
     )
 }
 
+// export page component
 export default Convert;

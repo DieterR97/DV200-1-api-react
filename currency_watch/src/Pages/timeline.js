@@ -1,15 +1,24 @@
 import React from "react";
-import axios from "axios";
+// import axios to use in API Call
+import axios from 'axios';
+// import useState and useEffect
 import { useState, useEffect } from "react";
+// import array of currency codes
 import { CurrencyCodes } from "../currency_codes";
+// import specific chart component
 import LineChart from "../components/LineChart";
+import { Chart } from "chart.js";
 
 function Timeline() {
 
+    // endpoints to be used in API call
     const endpointLatest = 'latest';
     const endpointHistorical = 'historical';
 
-    const api_key = '3adcdbb1074c952217f648676ec9305f';
+    // API Key
+    const api_key = 'b519f8f005e1e5b8db27f39b6aa3474c';
+
+    // Base currency to compare other currencies to, to be used in API url
     var base = 'USD';
     // var symbols = 'ZAR'
 
@@ -31,35 +40,41 @@ function Timeline() {
     //     });
     // }, []);
 
-
+    // state for selected currency code
     const [currencySelected, setCurrencySelected] = useState([]);
+    // state for latest exchange value
     const [currentExchange, setCurrentExchange] = useState('')
 
+    // year and month string to be used in API url
     const dateJan = '2023-01-';
 
+    // arrays and state arrays for currency Dates and Rates for selected currency
     const JanDates = [];
-    const JanRates = [];
-
+    const JanRates = []
+    const [apiJanDates, setApiJanDates] = useState([]);
     const [apiJanRates, setApiJanRates] = useState([]);
+
+    // range of data set array, either 31 or 8
     const [range, setRange] = useState('31');
+
+    // controls whether to show graph or not
+    const [showLine, setShowLine] = useState(false);
 
     useEffect(() => {
 
+        // axios call to get latest exchange rate
         axios.get('https://api.currencybeacon.com/v1/' + endpointLatest + '?api_key=' + api_key + '&base=' + base + '&symbols=' + currencySelected)
             .then(result => {
 
-                // console.log(result);
-
-                // for currency to symbols rates
-                // console.log(result.data.response.rates[currencySelected])
-
                 setCurrentExchange(result.data.response.rates[currencySelected])
+                // console.log(result.data.response.rates[currencySelected])
 
             })
             .catch(err => {
                 console.log(err)
             })
 
+        // for loop to generate array of exchange rates for 'range'
         for (let i = 1; i < range; i++) {
             let day2 = i
             if (i < 10) {
@@ -79,19 +94,31 @@ function Timeline() {
                 })
         }
         setApiJanRates(JanRates);
-        console.log(apiJanRates);
+        setApiJanDates(JanDates);
+        // console.log(apiJanRates);
 
-        setLineData({
-            labels: JanDates,
-            datasets: [
-                {
-                    label: 'Currency over 30 Days',
-                    data: apiJanRates,
-                    borderColor: 'rgb(0, 0, 0)',
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                },
-            ],
-        })
+    }, [currencySelected, range]);
+
+
+
+    useEffect(() => {
+
+        // console.log(apiJanDates);
+        // console.log(apiJanRates);
+
+        const timer = setTimeout(() => {
+            setLineData({
+                labels: apiJanDates,
+                datasets: [
+                    {
+                        label: 'Currency over 30 Days',
+                        data: apiJanRates,
+                        borderColor: 'rgb(0, 0, 0)',
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    },
+                ],
+            })
+        }, 3000);
 
         const actualRange = range - 1;
         setOptionsLine({
@@ -119,16 +146,15 @@ function Timeline() {
                     }
                 },
             },
-
         })
 
-    }, [currencySelected, range]);
+        if (currencySelected != '') {
+            setShowLine(true);
+        }
 
+        return () => clearTimeout(timer);
 
-
-
-
-
+    }, [apiJanRates]);
 
 
 
@@ -158,7 +184,7 @@ function Timeline() {
 
 
     return (
-        <div style={{ background: 'linear-gradient(198deg, rgba(255,255,255,1) 24%, rgba(13,202,240,1) 70%)'}}>
+        <div style={{ background: 'linear-gradient(198deg, rgba(255,255,255,1) 24%, rgba(13,202,240,1) 70%)' }}>
             <h1>Timeline</h1>
             <select onChange={(e) => {
                 console.log(e.target.value);
@@ -182,15 +208,17 @@ function Timeline() {
             }}>
                 <option value='31'>30 Days</option>
                 <option value='8'>7 Days</option>
-                <option value='2'>1 Day</option>
             </select>
 
             {currencySelected != '' && <p style={{ color: '#0dcaf0' }}><b>{currencySelected}</b> Current Exchange Rate to USD: <b>{currentExchange}</b></p>}
 
-            {lineData ? <div style={{ width: 1200, margin: 'auto', paddingBottom: '20px' }}><LineChart ChartOptions={optionsLine} ChartData={lineData} /></div> : null}
+            {/* {lineData ? <div style={{ width: 1200, margin: 'auto', paddingBottom: '20px' }}><LineChart ChartOptions={optionsLine} ChartData={lineData} /></div> : null} */}
+            {/* only show graph if boolean is set to true */}
+            {showLine && <div style={{ width: 1200, margin: 'auto', paddingBottom: '20px' }}><LineChart ChartOptions={optionsLine} ChartData={lineData} /></div>}
 
         </div>
     )
 }
 
+// export page component
 export default Timeline;
