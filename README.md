@@ -89,6 +89,15 @@ In the future I will most probably use a more user friendly API that supports mo
 
 ## Final Outcome
 * ### Mockups
+
+![Man using MacBook Pro beside the window_2023-04-12 14 15 49 ClipClip](https://user-images.githubusercontent.com/113913471/231460970-186834c4-7f14-46fa-9ac6-faf8ed4638d5.jpg)
+
+![Man using MacBook Pro in the office_CompareScreenshot](https://user-images.githubusercontent.com/113913471/231461063-f0623c6c-8273-4b98-9daa-f292f0df635e.jpg)
+
+![Woman working on iMac in the minimalist office_TimeLineScreenShot](https://user-images.githubusercontent.com/113913471/231461105-e5d34f45-baeb-46b1-8e4e-1ae6933edeaa.jpg)
+
+![iMac standing on the desk during the meeting_2023-04-12 14 16 20 ClipClip](https://user-images.githubusercontent.com/113913471/231461136-e96de3b9-0933-427b-b4b0-be5d0b6ec275.jpg)
+
 * ### Video Demonstration
 
 ## Conclusion
