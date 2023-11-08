@@ -9,12 +9,11 @@
 
   <p align="center">
     Currency for All! <br>
-   <br />
-   <br />
-   <p>[Video Demonstration Drive Link](https://drive.google.com/file/d/1AiLE3S6FOeq5keNpncJihOCWreMYlp6S/view?usp=sharing)</p>
-    ·
-    <p>Report Bug or Request Feature - [221122@virtualwindow.co.za](mailto:221122@virtualwindow.co.za)</p>    
 </p>
+
+[Video Demonstration Drive Link](https://drive.google.com/file/d/1AiLE3S6FOeq5keNpncJihOCWreMYlp6S/view?usp=sharing)
+
+Report Bug or Request Feature - [221122@virtualwindow.co.za](mailto:221122@virtualwindow.co.za)
 
 # Currency Watch
 ### DV200 COMPONENT AND OBJECT ORIENTED PROGRAMMING
