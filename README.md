@@ -120,8 +120,9 @@ This web application has:
 
 ## Development Process
 ### Implementation Process
-    #### Highlights
-      * React is very fast in updating the dom as it's Object Oriented
+
+#### Highlights
+  * React is very fast in updating the dom as it's Object Oriented
       * Breaking up your web application into components is a very clean and re-useable way of coding
       * Axios is a usefull way of making your API calls and delivers promises which is great when it comes to using the data in the response
       * Routing is a clean and easy way of using your different pages and components, like the navbar, less code is used in the end
