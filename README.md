@@ -123,14 +123,14 @@ This web application has:
 
 #### Highlights
   * React is very fast in updating the dom as it's Object Oriented
-      * Breaking up your web application into components is a very clean and re-useable way of coding
-      * Axios is a usefull way of making your API calls and delivers promises which is great when it comes to using the data in the response
-      * Routing is a clean and easy way of using your different pages and components, like the navbar, less code is used in the end
-      * Charts.js is an awesome and super usefull way of displaying data
-    #### Challenges
-      * Learning what Asynchronous programming is and AsyncAwait was a bit of a challenge getting my head around that
-      * Learning the url structure of my specific API and how to pass parameters to it
-      * Styling the Charts.js components
+  * Breaking up your web application into components is a very clean and re-useable way of coding
+  * Axios is a usefull way of making your API calls and delivers promises which is great when it comes to using the data in the response
+  * Routing is a clean and easy way of using your different pages and components, like the navbar, less code is used in the end
+  * Charts.js is an awesome and super usefull way of displaying data
+#### Challenges
+  * Learning what Asynchronous programming is and AsyncAwait was a bit of a challenge getting my head around that
+  * Learning the url structure of my specific API and how to pass parameters to it
+  * Styling the Charts.js components
 
 ### Future Implementation
 
